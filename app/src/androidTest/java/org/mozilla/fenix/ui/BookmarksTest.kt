@@ -170,7 +170,7 @@ class BookmarksTest {
         }
     }
 
-    @Ignore("Flaky test, temp disabled: https://github.com/mozilla-mobile/fenix/issues/10690")
+    // @Ignore("Flaky test, temp disabled: https://github.com/mozilla-mobile/fenix/issues/10690")
     @Test
     fun editBookmarkTest() {
         val defaultWebPage = TestAssetHelper.getGenericAsset(mockWebServer, 1)
@@ -183,7 +183,7 @@ class BookmarksTest {
                 RecyclerViewIdlingResource(activityTestRule.activity.findViewById(R.id.bookmark_list))
             IdlingRegistry.getInstance().register(bookmarksListIdlingResource!!)
         }.openThreeDotMenu(defaultWebPage.url) {
-            IdlingRegistry.getInstance().unregister(bookmarksListIdlingResource!!)
+            // IdlingRegistry.getInstance().unregister(bookmarksListIdlingResource!!)
         }.clickEdit {
             verifyEditBookmarksView()
             verifyBookmarkNameEditBox()
@@ -193,7 +193,7 @@ class BookmarksTest {
             changeBookmarkUrl(testBookmark.url)
             saveEditBookmark()
 
-            IdlingRegistry.getInstance().register(bookmarksListIdlingResource!!)
+            // IdlingRegistry.getInstance().register(bookmarksListIdlingResource!!)
 
             verifyBookmarkTitle(testBookmark.title)
             verifyBookmarkedURL(testBookmark.url)

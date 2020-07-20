@@ -38,8 +38,9 @@ gcloud:
   performance-metrics: true
 
   test-targets:
-   - package org.mozilla.fenix.ui.BookmarksTest#createBookmarkFolderTest
-   - package org.mozilla.fenix.ui.BookmarksTest#createBookmarkFolderTest2
+   - class org.mozilla.fenix.ui.BookmarksTest#createBookmarkFolderTest
+   - class org.mozilla.fenix.ui.BookmarksTest#createBookmarkFolderTest2
+   - class org.mozilla.fenix.ui.BookmarksTest#editBookmarkTest
    # - package org.mozilla.fenix.glean
 
   device:
